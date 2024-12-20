@@ -10,8 +10,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "@effect/platform": "^0.71.6",
   "dependencies": {
+    "@effect/platform": "^0.71.6",
     "effect": "^3.11.9"
   },
   "exports": {
