@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@repo/expense-tracker-http",
+  "name": "@repo/expenses-tracker-http",
   "type": "module",
   "version": "0.1.0",
   "description": "",
@@ -16,5 +16,8 @@
       "default": "./dist/index.js",
       "types": "./src/index.ts"
     }
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5"
   }
 }
