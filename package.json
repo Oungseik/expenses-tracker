@@ -17,7 +17,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@9.15",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=20"
   }
