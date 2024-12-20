@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "expenses-tracker",
   "version": "0.1.0",
   "description": "Monorepo for expenses-tracker",
