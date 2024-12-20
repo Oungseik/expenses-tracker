@@ -3,21 +3,26 @@
   "name": "@repo/expenses-tracker-http",
   "type": "module",
   "version": "0.1.0",
-  "description": "",
+  "description": "HTTP API definitions defined with HTTP module from effect/platform.",
+  "scripts": {
+    "build": "tsup"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "@effect/platform": "^0.71.6",
   "dependencies": {
-    "@effect/platform": "^0.71.6",
     "effect": "^3.11.9"
   },
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "types": "./src/index.ts"
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
     }
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "esbuild": "0.24.0",
     "tsup": "^8.3.5"
   }
 }
