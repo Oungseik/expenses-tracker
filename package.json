@@ -2,6 +2,7 @@
   "name": "expenses-tracker",
   "version": "0.1.0",
   "description": "Monorepo for expenses-tracker",
+  "type": "module",
   "scripts": {
     "build": "turbo build",
     "check": "turbo check",
