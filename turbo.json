@@ -40,6 +40,9 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "format": {
+      "cache": true
     }
   }
 }
