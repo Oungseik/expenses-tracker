@@ -10,7 +10,7 @@
 		"lint": {
 			"dependsOn": ["^lint"],
 			"cache": true,
-			"inputs": ["src/**/*.{js,ts,jsx,tsx}", ".eslintrc.json", "package.json"]
+			"inputs": ["src/**/*.{js,ts,jsx,tsx}", ".eslintrc.json", "biome.jsonc", "package.json"]
 		},
 		"check-types": {
 			"dependsOn": ["^check-types"],
