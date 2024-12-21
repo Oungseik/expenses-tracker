@@ -7,7 +7,7 @@ const CheckHealth = Schema.Struct({
 
 export const CheckHealthApi = HttpApiGroup.make("checkHealth")
   .add(
-    HttpApiEndpoint.get("checkHealth", "/chech-health").addSuccess(CheckHealth),
+    HttpApiEndpoint.get("checkHealth", "/check-health").addSuccess(CheckHealth),
   )
   .annotateContext(
     OpenApi.annotations({
