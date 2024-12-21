@@ -6,6 +6,7 @@
   "description": "HTTP API definitions defined with HTTP module from effect/platform.",
   "scripts": {
     "build": "tsup",
+    "check": "biome check --write ./src",
     "format": "biome format --write ./src"
   },
   "keywords": [],

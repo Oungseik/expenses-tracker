@@ -46,7 +46,11 @@ importers:
         specifier: ^8.3.5
         version: 8.3.5(typescript@5.7.2)
 
-  packages/typescript-config: {}
+  packages/typescript-config:
+    devDependencies:
+      '@repo/biome-config':
+        specifier: workspace:*
+        version: link:../biome-config
 
 packages:
 

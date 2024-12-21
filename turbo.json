@@ -1,48 +1,31 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
-  "tasks": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
-    },
-    "lint": {
-      "dependsOn": [
-        "^lint"
-      ],
-      "cache": true,
-      "inputs": [
-        "src/**/*.{js,ts,jsx,tsx}",
-        ".eslintrc.json",
-        "package.json"
-      ]
-    },
-    "check-types": {
-      "dependsOn": [
-        "^check-types"
-      ],
-      "cache": true,
-      "inputs": [
-        "src/**/*.{js,ts,jsx,tsx}",
-        "tsconfig.json",
-        "package.json"
-      ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "format": {
-      "cache": true
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["$TURBO_DEFAULT$", ".env*"],
+			"outputs": [".next/**", "!.next/cache/**"]
+		},
+		"lint": {
+			"dependsOn": ["^lint"],
+			"cache": true,
+			"inputs": ["src/**/*.{js,ts,jsx,tsx}", ".eslintrc.json", "package.json"]
+		},
+		"check-types": {
+			"dependsOn": ["^check-types"],
+			"cache": true,
+			"inputs": ["src/**/*.{js,ts,jsx,tsx}", "tsconfig.json", "package.json"]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"format": {
+			"cache": true
+		},
+		"check": {
+			"cache": true
+		}
+	}
 }
