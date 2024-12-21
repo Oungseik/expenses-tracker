@@ -29,7 +29,19 @@
     }
   },
   "linter": {
-    "enabled": true
+    "enabled": true,
+    "rules": {
+      "suspicious": {
+        "noConsole": "warn",
+        "noConstEnum": "warn",
+        "noDuplicateCase": "error",
+        "noDuplicateJsxProps": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateFontNames": "error",
+        "noDuplicateParameters": "error"
+      }
+    }
   },
   "organizeImports": {
     "enabled": true
