@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "server",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "API implementation of Expenses-Tracker",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "check": "biome check --write ./src",
+    "format": "biome format --write ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@effect/platform": "^0.71.6",
+    "@effect/platform-bun": "^0.51.6",
+    "@repo/biome-config": "workspace:*",
+    "@repo/expenses-tracker-http": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "effect": "^3.11.9"
+  }
+}
