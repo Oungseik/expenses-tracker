@@ -9,7 +9,6 @@ export const Expense = S.Struct({
   amount: S.Number,
   currency: Currency,
   category: ExpenseCategory,
-  subCategories: S.Array(ExpenseCategory),
   date: S.Date,
 });
 
