@@ -4,9 +4,9 @@ import { Expense } from "../Domain";
 import { InternalServerError } from "../Errors";
 
 export const ExpensesApi = HttpApiGroup.make("expenses")
-  .add(HttpApiEndpoint.get("expenses", "/").addSuccess(S.Array(Expense)))
+  .add(HttpApiEndpoint.get("getExpenses", "/").addSuccess(S.Array(Expense)))
   .add(
-    HttpApiEndpoint.get("categories", "/categories").addSuccess(
+    HttpApiEndpoint.get("getCategories", "/categories").addSuccess(
       S.Array(S.String),
     ),
   )
