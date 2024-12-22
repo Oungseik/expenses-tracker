@@ -7,10 +7,11 @@ import {
 import { BunHttpServer, BunRuntime } from "@effect/platform-bun";
 import { api } from "@repo/expenses-tracker-http";
 import { Layer } from "effect";
-import { CheckHealthApiLive } from "./CheckHealth";
+import { CheckHealthApiLive, ExpensesApiLive } from "./Http";
 
 export const ApiLive = HttpApiBuilder.api(api).pipe(
   Layer.provide(CheckHealthApiLive),
+  Layer.provide(ExpensesApiLive),
 );
 
 HttpApiBuilder.serve(HttpMiddleware.logger).pipe(
