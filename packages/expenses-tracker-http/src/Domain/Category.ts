@@ -9,7 +9,7 @@ export const baseCategories = [
   "Shopping",
   "Transport",
   "Utilites",
-];
+] as const;
 
 export const ExpenseCategory = Schema.Literal(...baseCategories).pipe(
   Schema.brand("Category"),
@@ -17,3 +17,5 @@ export const ExpenseCategory = Schema.Literal(...baseCategories).pipe(
     title: "Expense Category",
   }),
 );
+
+export type ExpenseCategory = typeof ExpenseCategory.Type;

@@ -1,6 +1,6 @@
 import { Schema } from "effect";
 
-export const currencies = ["USD", "BAHT", "MMK"];
+export const currencies = ["USD", "BAHT", "MMK"] as const;
 
 export const Currency = Schema.Literal(...currencies).pipe(
   Schema.brand("Currency"),
@@ -8,3 +8,5 @@ export const Currency = Schema.Literal(...currencies).pipe(
     title: "Currency",
   }),
 );
+
+export type Currency = typeof Currency.Type;
