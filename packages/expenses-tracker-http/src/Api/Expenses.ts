@@ -6,7 +6,7 @@ import {
 } from "@effect/platform";
 import { Schema as S, Schema } from "effect";
 import { Expense } from "../Domain";
-import { InternalServerError } from "../Errors";
+import { InternalServerError, NotFound } from "../Errors";
 
 const ExpenseIdParam = HttpApiSchema.param("id", Schema.NonEmptyString);
 
@@ -22,6 +22,7 @@ const addExpense = HttpApiEndpoint.post("addExpense", "/")
 
 const getExpense = HttpApiEndpoint.get("getExpense", `/${ExpenseIdParam}`)
   .addSuccess(Expense)
+  .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
       title: "Get Expense",
@@ -35,6 +36,7 @@ const updateExpense = HttpApiEndpoint.put(
 )
   .setPayload(Expense.pipe(S.partial))
   .addSuccess(S.Literal("success"))
+  .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
       title: "Update Expense",
@@ -44,6 +46,7 @@ const updateExpense = HttpApiEndpoint.put(
 
 const deleteExpense = HttpApiEndpoint.del("deleteExpense", `/${ExpenseIdParam}`)
   .addSuccess(S.Literal("success"))
+  .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
       title: "Delete Expense",
@@ -61,6 +64,7 @@ const addExpenses = HttpApiEndpoint.post("addExpenses", "/")
     }),
   );
 
+// TODO implement filtering feature
 const getExpenses = HttpApiEndpoint.get("getExpenses", "/")
   .addSuccess(S.Array(Expense))
   .annotateContext(
@@ -73,6 +77,7 @@ const getExpenses = HttpApiEndpoint.get("getExpenses", "/")
 const deleteExpenses = HttpApiEndpoint.del("deleteExpenses", "/")
   .setPayload(S.Array(S.String))
   .addSuccess(S.Literal("success"))
+  .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
       title: "Delete Expenses",
