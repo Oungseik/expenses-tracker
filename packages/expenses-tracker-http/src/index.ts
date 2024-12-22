@@ -1,4 +1,6 @@
 import { HttpApi } from "@effect/platform";
-import { CheckHealthApi } from "./CheckHealth";
+import { CheckHealthApi, ExpensesApi } from "./Api";
 
-export const api = HttpApi.make("expensesTrackerApi").add(CheckHealthApi);
+export const api = HttpApi.make("expensesTrackerApi")
+  .add(CheckHealthApi)
+  .add(ExpensesApi);

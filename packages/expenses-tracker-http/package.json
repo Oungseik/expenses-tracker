@@ -25,6 +25,10 @@
     "./checkhealth": {
       "types": "./src/CheckHealth.ts",
       "default": "./dist/CheckHealth.js"
+    },
+    "./domain": {
+      "types": "./src/Domain.ts",
+      "default": "./dist/Domain.js"
     }
   },
   "devDependencies": {
