@@ -6,7 +6,7 @@ import { ExpenseCategory } from "./Category";
 export const Expense = S.Struct({
   title: S.String,
   description: S.String.pipe(S.UndefinedOr),
-  currency: Amount,
+  amount: Amount,
   category: ExpenseCategory,
   subCategories: S.Array(ExpenseCategory),
   date: S.Date,

@@ -51,7 +51,7 @@ const deleteExpense = HttpApiEndpoint.del("deleteExpense", `/${ExpenseIdParam}`)
     }),
   );
 
-const addExpenses = HttpApiEndpoint.post("/addExpenses", "/")
+const addExpenses = HttpApiEndpoint.post("addExpenses", "/")
   .setPayload(S.Array(Expense))
   .addSuccess(S.Literal("success"))
   .annotateContext(
