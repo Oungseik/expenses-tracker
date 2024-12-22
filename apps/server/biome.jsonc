@@ -3,5 +3,12 @@
   "extends": ["@repo/biome-config"],
   "organizeImports": {
     "enabled": true
+  },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
   }
 }
