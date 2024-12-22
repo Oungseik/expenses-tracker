@@ -8,5 +8,7 @@ export const ExpensesApiLive: Layer.Layer<
   never,
   never
 > = HttpApiBuilder.group(api, "expenses", (handlers) =>
-  handlers.handle("categories", () => Effect.succeed(baseCategories)),
+  handlers
+    .handle("getCategories", () => Effect.succeed(baseCategories))
+    .handle("getExpenses", () => Effect.succeed([])),
 );
