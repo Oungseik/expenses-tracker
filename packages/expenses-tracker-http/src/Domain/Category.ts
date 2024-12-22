@@ -1,14 +1,14 @@
 import { Schema } from "effect";
 
 export const baseCategories = [
+  "Entertainment",
   "Food & Drinks",
   "Groceries",
-  "Shopping",
-  "Transport",
-  "Entertainment",
-  "Utilites",
   "Health & Fitness",
   "Home",
+  "Shopping",
+  "Transport",
+  "Utilites",
 ];
 
 export const ExpenseCategory = Schema.Literal(...baseCategories).pipe(
