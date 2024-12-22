@@ -1,12 +1,13 @@
 import { Schema as S } from "effect";
 
-import { Amount } from "./Amount";
 import { ExpenseCategory } from "./Category";
+import { Currency } from "./Currency";
 
 export const Expense = S.Struct({
   title: S.String,
   description: S.String.pipe(S.UndefinedOr),
-  amount: Amount,
+  amount: S.Number,
+  currency: Currency,
   category: ExpenseCategory,
   subCategories: S.Array(ExpenseCategory),
   date: S.Date,
