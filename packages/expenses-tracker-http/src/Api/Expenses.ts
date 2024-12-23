@@ -20,7 +20,7 @@ const addExpense = HttpApiEndpoint.post("addExpense", "/")
     }),
   );
 
-const getExpense = HttpApiEndpoint.get("getExpense", `/${ExpenseIdParam}`)
+const getExpense = HttpApiEndpoint.get("getExpense")`/${ExpenseIdParam}`
   .addSuccess(Expense)
   .addError(NotFound)
   .annotateContext(
@@ -30,10 +30,7 @@ const getExpense = HttpApiEndpoint.get("getExpense", `/${ExpenseIdParam}`)
     }),
   );
 
-const updateExpense = HttpApiEndpoint.put(
-  "updateExpenses",
-  `/${ExpenseIdParam}`,
-)
+const updateExpense = HttpApiEndpoint.put("updateExpenses")`/${ExpenseIdParam}`
   .setPayload(Expense.pipe(S.partial))
   .addSuccess(S.Literal("success"))
   .addError(NotFound)
@@ -44,7 +41,7 @@ const updateExpense = HttpApiEndpoint.put(
     }),
   );
 
-const deleteExpense = HttpApiEndpoint.del("deleteExpense", `/${ExpenseIdParam}`)
+const deleteExpense = HttpApiEndpoint.del("deleteExpense")`/${ExpenseIdParam}`
   .addSuccess(S.Literal("success"))
   .addError(NotFound)
   .annotateContext(
