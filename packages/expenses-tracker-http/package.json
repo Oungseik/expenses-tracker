@@ -29,6 +29,10 @@
     "./domain": {
       "types": "./src/Domain.ts",
       "default": "./dist/Domain.js"
+    },
+    "./errors": {
+      "types": "./src/Errors.ts",
+      "default": "./dist/Errors.js"
     }
   },
   "devDependencies": {
