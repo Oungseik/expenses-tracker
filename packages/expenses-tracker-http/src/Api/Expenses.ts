@@ -12,7 +12,7 @@ const ExpenseIdParam = HttpApiSchema.param("id", Schema.NonEmptyString);
 
 const addExpense = HttpApiEndpoint.post("addExpense", "/")
   .setPayload(Expense)
-  .addSuccess(S.Literal("success"))
+  .addSuccess(S.Struct({ status: S.Literal("success") }))
   .annotateContext(
     OpenApi.annotations({
       title: "Add Expense",
@@ -32,7 +32,7 @@ const getExpense = HttpApiEndpoint.get("getExpense")`/${ExpenseIdParam}`
 
 const updateExpense = HttpApiEndpoint.put("updateExpenses")`/${ExpenseIdParam}`
   .setPayload(Expense.pipe(S.partial))
-  .addSuccess(S.Literal("success"))
+  .addSuccess(S.Struct({ status: S.Literal("success") }))
   .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
@@ -42,7 +42,7 @@ const updateExpense = HttpApiEndpoint.put("updateExpenses")`/${ExpenseIdParam}`
   );
 
 const deleteExpense = HttpApiEndpoint.del("deleteExpense")`/${ExpenseIdParam}`
-  .addSuccess(S.Literal("success"))
+  .addSuccess(S.Struct({ status: S.Literal("success") }))
   .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
@@ -63,7 +63,7 @@ const getExpenses = HttpApiEndpoint.get("getExpenses", "/")
 
 const deleteExpenses = HttpApiEndpoint.del("deleteExpenses", "/")
   .setPayload(S.Array(S.String))
-  .addSuccess(S.Literal("success"))
+  .addSuccess(S.Struct({ status: S.Literal("success") }))
   .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
