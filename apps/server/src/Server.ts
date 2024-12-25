@@ -1,9 +1,4 @@
-import {
-  HttpApiBuilder,
-  HttpApiSwagger,
-  HttpMiddleware,
-  HttpServer,
-} from "@effect/platform";
+import { HttpApiBuilder, HttpApiSwagger, HttpMiddleware, HttpServer } from "@effect/platform";
 import { api } from "@repo/expenses-tracker-http";
 import { Layer } from "effect";
 import { CheckHealthApiLive, ExpensesApiLive } from "./Http";
