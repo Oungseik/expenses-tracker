@@ -30,7 +30,7 @@ const getExpense = HttpApiEndpoint.get("getExpense")`/${ExpenseIdParam}`
     }),
   );
 
-const updateExpense = HttpApiEndpoint.put("updateExpenses")`/${ExpenseIdParam}`
+const updateExpense = HttpApiEndpoint.put("updateExpense")`/${ExpenseIdParam}`
   .setPayload(Expense.pipe(S.partial))
   .addSuccess(S.Struct({ status: S.Literal("success") }))
   .addError(NotFound)
