@@ -21,6 +21,6 @@ export class UnprocessableContent extends S.TaggedError<UnprocessableContent>()(
 
 export class InternalServerError extends S.TaggedError<InternalServerError>()(
   "InternalServerError",
-  { message: S.String },
+  {},
   HttpApiSchema.annotations({ status: 500 }),
 ) {}
