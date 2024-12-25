@@ -4,6 +4,9 @@
   "organizeImports": {
     "enabled": true
   },
+  "formatter": {
+    "lineWidth": 100
+  },
   "linter": {
     "rules": {
       "suspicious": {
