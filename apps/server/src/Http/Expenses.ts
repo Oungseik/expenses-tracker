@@ -28,7 +28,7 @@ export const ExpensesApiLive = HttpApiBuilder.group(api, "expenses", (handlers) 
         Ef.map((data) => data as ExpenseWithId),
         Ef.tapError((e) => Ef.sync(() => console.error(e))),
         Ef.catchTags({
-          NoSuchElementException: () => new NotFound({ message: "not found" }),
+          NoSuchElementException: () => new NotFound(),
           UnknownException: () => new InternalServerError(),
         }),
       ),
