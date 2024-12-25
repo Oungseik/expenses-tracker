@@ -9,7 +9,7 @@ export class Unauthorized extends S.TaggedError<Unauthorized>()(
 
 export class NotFound extends S.TaggedError<NotFound>()(
   "NotFound",
-  { message: S.String },
+  {},
   HttpApiSchema.annotations({ status: 404 }),
 ) {}
 
