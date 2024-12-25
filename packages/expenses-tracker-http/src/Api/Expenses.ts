@@ -51,16 +51,6 @@ const deleteExpense = HttpApiEndpoint.del("deleteExpense")`/${ExpenseIdParam}`
     }),
   );
 
-const addExpenses = HttpApiEndpoint.post("addExpenses", "/")
-  .setPayload(S.Array(Expense))
-  .addSuccess(S.Literal("success"))
-  .annotateContext(
-    OpenApi.annotations({
-      title: "Add Expenses",
-      description: "Add multiple expenses",
-    }),
-  );
-
 // TODO implement filtering feature
 const getExpenses = HttpApiEndpoint.get("getExpenses", "/")
   .addSuccess(S.Array(ExpenseWithId))
@@ -96,7 +86,6 @@ export const ExpensesApi = HttpApiGroup.make("expenses")
   .add(getExpense)
   .add(updateExpense)
   .add(deleteExpense)
-  .add(addExpenses)
   .add(getExpenses)
   .add(deleteExpenses)
   .add(getCategories)
