@@ -5,7 +5,7 @@ import {
   OpenApi,
 } from "@effect/platform";
 import { Schema as S, Schema } from "effect";
-import { Expense } from "../Domain";
+import { Expense, ExpenseWithId } from "../Domain";
 import { InternalServerError, NotFound } from "../Errors";
 
 const ExpenseIdParam = HttpApiSchema.param("id", Schema.NonEmptyString);
@@ -21,7 +21,7 @@ const addExpense = HttpApiEndpoint.post("addExpense", "/")
   );
 
 const getExpense = HttpApiEndpoint.get("getExpense")`/${ExpenseIdParam}`
-  .addSuccess(Expense)
+  .addSuccess(ExpenseWithId)
   .addError(NotFound)
   .annotateContext(
     OpenApi.annotations({
@@ -63,7 +63,7 @@ const addExpenses = HttpApiEndpoint.post("addExpenses", "/")
 
 // TODO implement filtering feature
 const getExpenses = HttpApiEndpoint.get("getExpenses", "/")
-  .addSuccess(S.Array(Expense))
+  .addSuccess(S.Array(ExpenseWithId))
   .annotateContext(
     OpenApi.annotations({
       title: "Get Expenses",
