@@ -33,7 +33,7 @@ export const ExpensesApiLive = HttpApiBuilder.group(api, "expenses", (handlers) 
         }),
       ),
     )
-    .handle("updateExpenses", ({ payload, path: { id } }) =>
+    .handle("updateExpense", ({ payload, path: { id } }) =>
       Ef.tryPromise(() =>
         db
           .update(expenses)
