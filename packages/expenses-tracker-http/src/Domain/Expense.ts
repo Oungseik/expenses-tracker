@@ -6,7 +6,7 @@ import { Id } from "./Id";
 
 export const Expense = S.Struct({
   title: S.String,
-  description: S.String.pipe(S.UndefinedOr),
+  description: S.String.pipe(S.UndefinedOr, S.NullOr),
   amount: S.Number,
   currency: Currency,
   category: ExpenseCategory,
