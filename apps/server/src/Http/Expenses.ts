@@ -12,7 +12,7 @@ export const ExpensesApiLive = HttpApiBuilder.group(api, "expenses", (handlers) 
   handlers
     .handle("addExpense", ({ payload }) =>
       Ef.tryPromise(() => db.insert(expenses).values({ ...payload, id: v7() })).pipe(
-        Ef.andThen(Ef.succeed("success" as const)),
+        Ef.andThen(Ef.succeed({ status: "success" as const })),
         Ef.tapError((e) => Ef.sync(() => console.error(e))),
         Ef.catchTags({
           UnknownException: () => new InternalServerError(),
@@ -40,14 +40,14 @@ export const ExpensesApiLive = HttpApiBuilder.group(api, "expenses", (handlers) 
           .set({ ...payload })
           .where(eq(expenses.id, id)),
       ).pipe(
-        Ef.andThen(Ef.succeed("success" as const)),
+        Ef.andThen(Ef.succeed({ status: "success" as const })),
         Ef.tapError((e) => Ef.sync(() => console.error(e))),
         Ef.catchTags({ UnknownException: () => new InternalServerError() }),
       ),
     )
     .handle("deleteExpense", ({ path: { id } }) =>
       Ef.tryPromise(() => db.delete(expenses).where(eq(expenses.id, id))).pipe(
-        Ef.andThen(Ef.succeed("success" as const)),
+        Ef.andThen(Ef.succeed({ status: "success" as const })),
         Ef.tapError((e) => Ef.sync(() => console.error(e))),
         Ef.catchTags({ UnknownException: () => new InternalServerError() }),
       ),
@@ -62,6 +62,6 @@ export const ExpensesApiLive = HttpApiBuilder.group(api, "expenses", (handlers) 
         }),
       ),
     )
-    .handle("deleteExpenses", () => Ef.succeed("success"))
+    .handle("deleteExpenses", () => Ef.succeed({ status: "success" as const }))
     .handle("getCategories", () => Ef.succeed(baseCategories)),
 );
